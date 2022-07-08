@@ -9,20 +9,33 @@
 
 
 <body>
-    <h1>10 Richest People </h1>
-    <p> Drag and drop the items into their corresponding spots</p>
-    <ul class="draggable-list" id="draggable-list">
+    <div class="container">
+        <h1>10 Richest People </h1>
+        <p> Drag and drop the items into their corresponding spots</p>
+        <ul class="draggable-list" id="draggable-list">
 
-    </ul>
-    <button class="check-btn" id="check">
-        Check Order
-        <i class="fa-solid fa-paper-plane"></i>
-    </button>
-    <button id="sort-btn" type="button" class="btn btn-secondary">Sort Reviews</button>
-    <ul id="demo">
-        </p>
+        </ul>
+        <div class="btns">
+            <button class="check-btn" id="check">
+                Check Order
+                <i class="fa-solid fa-paper-plane"></i>
+            </button>
 
-        <script src="script.js"> </script>
+            <div class="order-drop-list">
+                <div class="dropdown">
+                    <button class="dropbtn">Sort By
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <button id="sort-btn" type="button" class="btn btn-secondary btn-asc">Ascending Order</button>
+                        <button id="sort-btn" type="button" class="btn btn-secondary btn-desc">Descending
+                            Order</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"> </script>
 </body>
 
 </html>

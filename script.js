@@ -1,7 +1,8 @@
 const draggable_list = document.getElementById('draggable-list');
 const check = document.getElementById('check');
 const check2 = document.getElementById('check2');
-const btn = document.querySelector('.btn');
+const btnAscOrder = document.querySelector('.btn-asc');
+const btnDescOrder = document.querySelector('.btn-desc');
 
 const richestPeople = [
 	'Jeff Bezos',
@@ -22,7 +23,7 @@ let dragStartIndex;
 
 createList();
 
-function sortOrder() {
+function sortOrderByAsc() {
 	// create empty array to append the each rich person's name
 	const names = [];
 
@@ -39,6 +40,30 @@ function sortOrder() {
 			return -1;
 		}
 		return 1;
+	});
+
+	// then change update the names to the sorted names
+	listItems.forEach((item, index) => {
+		item.children[1].children[0].innerText = sortedNames[index];
+	});
+}
+function sortOrderByDesc() {
+	// create empty array to append the each rich person's name
+	const names = [];
+
+	listItems.forEach(item => {
+		// get name of each person
+		let name = item.children[1].children[0].innerText;
+		// then append it to the empty array
+		names.push(name);
+	});
+
+	// sort the names
+	const sortedNames = names.sort((a, b) => {
+		if (a < b) {
+			return 1;
+		}
+		return -1;
 	});
 
 	// then change update the names to the sorted names
@@ -135,5 +160,6 @@ function addEventListener() {
 	});
 }
 
-btn.addEventListener('click', sortOrder);
+btnAscOrder.addEventListener('click', sortOrderByAsc);
+btnDescOrder.addEventListener('click', sortOrderByDesc);
 check.addEventListener('click', checkOrder);
