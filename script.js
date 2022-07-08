@@ -1,6 +1,5 @@
 const draggable_list = document.getElementById('draggable-list');
 const check = document.getElementById('check');
-const check2 = document.getElementById('check2');
 const btnAscOrder = document.querySelector('.btn-asc');
 const btnDescOrder = document.querySelector('.btn-desc');
 
@@ -72,7 +71,6 @@ function sortOrderByDesc() {
 	});
 }
 
-// created a new li according to the length of the richestPeople array
 function createList() {
 	// sorts the list in different orders each time you refresh the page.
 	[...richestPeople]
@@ -85,8 +83,8 @@ function createList() {
 			listItem.setAttribute('data-index', index);
 
 			listItem.innerHTML = `
-			<span class='number'>${index + 1}</span>
-            <div class="draggable" draggable="true">
+        <span class="number">${index + 1}</span>
+         <div class="draggable" draggable= "true">
             <p class="person-name">${person}</p>
             <i class="fas fa-grip-lines"></i>
         </div>     
